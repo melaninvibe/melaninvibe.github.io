@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Arimo|Quicksand" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.6.0/p5.js"></script>
+    <title></title>
+
+    <style>
+        h1 {
+            size: 50px;
+            color: white;
+            font-family: 'Quicksand', sans-serif;
+        }
+
+        img {
+            width: 50px;
+        }
+
+        body {
+            text-align: center;
+            background-color: grey;
+        }
+
+        #Flower {
+            background-color: white;
+            color: black;
+            border: 2px solid pink;
+
+        }
+
+        #Sun {
+            background-color: white;
+            color: black;
+            border: 2px solid yellow;
+
+        }
+
+        #Cloud {
+            background-color: white;
+            color: black;
+            border: 2px solid lightblue;
+
+        }
+
+        #clearcanvas {
+            background-color: white;
+            color: black;
+            border: 2px solid green;
+            text-align: right;
+        }
+    </style>
+
+
+</head>
+
+<body>
+    <h1>Draw Me!</h1>
+
+
+
+    <p>
+        <button id="clearcanvas">Clear<br><img src = "https://cdn.glitch.com/e759074b-dfcf-4857-821b-dfc7865e6f2e%2Fclear.png?1524084365752"></button> <br><br>
+        <button id="Flower">Flower<br><img src= "https://cdn.glitch.com/e759074b-dfcf-4857-821b-dfc7865e6f2e%2Fflower.png?1524001233150"> </button><br><br>
+        <button id="Cloud">Cloud<br> <img src = "https://cdn.glitch.com/e759074b-dfcf-4857-821b-dfc7865e6f2e%2Fcloud16.png?1524001129117"></button><br><br>
+        <button id="Sun">Sun<br><img src = "https://cdn.glitch.com/e759074b-dfcf-4857-821b-dfc7865e6f2e%2Fsun.png?1524001269901"></button>
+
+    </p>
+
+    <script>
+        /* global loadImage, createCanvas,random,noStroke, fill,ellipse,clear,cloud,click,drawCloud,drawFlower,rect,Climg,Flimg,Suimg,x,y,tint,background,alpha,image */
+        let img;
+        let ClImg;
+        let SuImg;
+        let FlImg;
+        let alpha = 255;
+        let d;
+        let VT;
+        let Cloud = "https://cdn.glitch.com/e759074b-dfcf-4857-821b-dfc7865e6f2e%2Fcloud16.png?1524001129117";
+        let Sun = "https://cdn.glitch.com/e759074b-dfcf-4857-821b-dfc7865e6f2e%2Fsun.png?1524001269901";
+        let Flower = "https://cdn.glitch.com/e759074b-dfcf-4857-821b-dfc7865e6f2e%2Fflower.png?1524001233150";
+
+        function preload() {
+            ClImg = loadImage(Cloud);
+            SuImg = loadImage(Sun);
+            FlImg = loadImage(Flower);
+
+
+        }
+
+
+
+        function setup() {
+            ClImg.resize(300, 0);
+            ClImg.loadPixels();
+            SuImg.resize(300, 0);
+            ClImg.resize(300, 0);
+            ClImg.loadPixels();
+            SuImg.resize(300, 0);
+            SuImg.loadPixels();
+            FlImg.resize(300, 0);
+            FlImg.loadPixels();
+            createCanvas(ClImg.width, ClImg.height);
+        }
+
+        function draw() {
+
+            if (VT === "Flower") {
+                drawFlower();
+            }
+
+
+            if (VT === "Cloud") {
+                drawCloud();
+            }
+
+            if (VT === "Sun") {
+                drawSun();
+            }
+
+        }
+
+        function FadeImage(img) {
+
+            background(0);
+            tint(255, alpha);
+            image(img, 0, 0);
+            alpha = alpha - 1;
+
+        }
+
+        $("#Flower").click(function() {
+
+            VT = "Flower";
+            alpha = 255
+
+        });
+
+        $("#Sun").click(function() {
+
+            VT = "Sun";
+
+            alpha = 255
+        });
+
+
+        $("#Cloud").click(function() {
+
+            VT = "Cloud";
+            alpha = 255
+
+        });
+        $("#clearcanvas").click(function() {
+            clear();
+            VT = "none";
+        });
+
+
+        function drawCloud() {
+
+            FadeImage(ClImg);
+
+        }
+
+        function drawSun() {
+
+            FadeImage(SuImg);
+        }
+
+        function drawFlower() {
+
+            FadeImage(FlImg);
+        }
+    </script>
+
+</body>
+
+</html>

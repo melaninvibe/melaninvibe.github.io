@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.6.0/p5.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Julius+Sans+One" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Cabin|Jura" rel="stylesheet">
+    <title> My capstone </title>
+    <link href="stylesheet.css" rel="stylesheet">
+</head>
+
+<body class="Index">
+    <div class="content">
+        <h1 class="Index">TAHEERAH</h1>
+        <h2 class="Cfonts">AP Create Task</h2>
+        <div class="Nav">
+            <a class="btn" href="index.html">Home</a>
+            <a class="btn" href="strengths.html">Strengths</a>
+            <a class="btn" href="paper.html">Paper</a>
+            <a class="btn" href="college.html">college</a>
+            <a class="btn" href="ap-explore-task.html">AP Explore task</a>
+            <a class="btn" href="ap-create-task.html">AP create task</a>
+        </div>
+
+
+
+        <p class "lettering">2a <br>My program was written in JavaScript with the use of p5 js library code. My code was created in Glitch, a program where partners are able to work cohesively together. The purpose of my code was to have 3 images fade in onto a black canvas.In
+            this video clip, you can see the use of four different button used each button does a different task. Three out of four buttons draw different items on the canvas while the fourth button cleans the canvas.
+        </p>
+        <p class "lettering">My partner and I used iterative pair programming by using glitch to then split the work and code at the same time. The challenge I encountered was the pictures not being able to be drawn onto the canvas when a button was pressed. I solved this
+            challenge by creating another link for the picture and updating everything with new links.The second challenge I encountered was my canvas not loading when a button was pressed. I solved this challenge by removing createCanvas() from function
+            draw to function setup because the canvas will be able to be already loaded once a button is pressed. By myself, I was able to successfully get all three buttons to correspond when pressed to create a canvanvas and draw a picture onto the
+            canvas
+        </p>
+        <pre>
+            <code>
+        
+$("#Flower").click(function() {
+
+	VT = "Flower";
+	alpha = 255
+
+});
+
+        </code>
+        </pre>
+        <p> 2c<br>The purpose of this algorithm transparent is when the flower button is pressed it will be loaded onto the canvas and if it is pressed, the picture will be reloaded again. The Alpha is what is controlling the color and it’s opaqueness. VT
+            stands for what is being pressed at the time.If this program did not include this algorithm, the buttons that were clicked would not do anything and the canvas would stay blank. This algorithm works with two sub algorithms for the code to
+            work.
+
+        </p>
+        <pre><code>Subalgorithm A 
+        
+function draw() {
+
+	if (VT === "Flower") {
+		drawFlower();
+	}
+
+        </code></pre>
+        <p>This sub algorithm chooses basically so if flower was chosen when a button was pressed the flower would be drawn onto the canvas.
+        </p>
+        <pre><code>Sub Algorithm B 
+        
+function FadeImage(img)
+{
+             
+     background(0);
+    tint(255, alpha);
+    image(img, 0, 0);
+    alpha = alpha - 1;
+
+} 
+
+      </code></pre>
+        <p>Sub Algorithm B When this code runs correctly, the background() will be set to black. Tint() sets the value of a picture, 255 is what the picture will be starting at, which is the full opaqueness. The Alpha is what is controlling the color and
+            it’s opaqueness. Tint is saying that the photo will begin at its full capacity and will fade into the background which is to be transparent. Alpha=alpha-1 controls how fast the picture fades into the background. The algorithm is able to achieve
+            this result by, drawing a picture onto a canvas that was created during the function setup and the picture will fade into the background as a transition.
+
+
+        </p>
+
+        <pre><code>
+ function drawImage(img)
+{
+             
+     background(0);
+    tint(255, alpha);
+    image(img, 0, 0);
+    alpha = alpha - 1;
+ 
+} 
+</code></pre>
+        <p>An example of an abstraction in my program is the drawImage() function. This abstraction simplifies the code by having one equation which is Alpha= alpha -1 because the alpha controls all of the pictures opaqueness. The code loades each picture
+            beforehand so once it is pressed the picture will be there. I created this abstraction to avoid repeating the lines of code that are in the drawImage function in different functions. If this abstraction weren’t present, then 3 unnecessary
+            functions will be apparent in my code.
+
+        </p>
+        <iframe src="create/index.html" height="500" width="100%" />
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>
